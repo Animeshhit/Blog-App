@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="/prism.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+<link rel="shortcut icon" href="./ico.png" type="image/png" />
+<title>{{data.slug}}|Blog App</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&display=swap');
+html{
+    scroll-behavior: smooth;
+}
+* {
+font-family: "Rubik", sans-serif;
+
+}
+.mark *{
+    
+}
+.mark h1,.mark h2,.mark h3,.mark h4,.mark h5{
+    color: #2C3333;
+    padding: 0.6rem 0;
+}
+.mark img {
+    width:100%;
+    max-width:600px;
+    height: auto;
+    max-width: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin:1rem 0;
+}
+.mark h1{
+    font-size: 2rem;
+    font-weight:800;
+}
+.mark h2{
+    font-size: 1.7rem;
+    font-weight:700;
+    border-bottom:1px solid rgba(0,0,0,0.3);
+}
+.mark h3{
+    font-size: 24px;
+    font-weight:600;
+}
+.mark h4{
+    font-size:21px;
+    font-weight: 500;
+}
+.mark h5{
+    font-size:18px;
+}
+
+.mark a{
+    color: #1363DF;
+    margin:0;
+    padding: 0;
+    vertical-align: baseline;
+    font-weight: 400;
+}
+.mark p,.mark ul.mark ol{
+    font-size: 16px;
+    line-height: 24px;
+    max-width: 540px;
+    color:rgba(0,0,0,0.5);
+}
+.mark p{
+    margin:0.5rem 0;
+}
+.mark ul, .mark ol {
+    padding: 0;
+    margin: 0;
+}
+.mark li {
+    padding: 0.5rem 0;
+    line-height: 24px;
+}
+.mark li ul, .mark li ul {
+    margin-left: 24px;
+}
+
+.mark blockquote{
+    width: 100%;
+    height: auto;
+    padding:0.7rem 0.7rem;
+    border-left:4px solid #06283D;
+    background:#DFF6FF;
+    word-wrap: wrap;
+    overflow: auto;
+    margin:1rem;
+}
+
+.mark pre {
+    padding: 0px 24px;
+    max-width: 800px;
+    white-space: pre-wrap;
+}
+.mark code {
+    font-family: Consolas, Monaco, Andale Mono, monospace;
+    line-height: 1.5;
+    font-size: 13px;
+}
+.mark aside {
+    display: block;
+    float: right;
+    width: 390px;
+}
+.mark hr {
+    width: 540px;
+    text-align: left;
+    margin: 0 auto 0 0;
+    color: #999;
+}
+.mark table {
+    border-collapse: collapse;
+    margin: 1em 1em;
+    border: 1px solid #CCC;
+}
+.mark table thead {
+    background-color: #EEE;
+}
+.mark table thead td {
+    color: #666;
+}
+.mark table td {
+    padding: 0.5em 1em;
+    border: 1px solid #CCC;
+}
+.mark strong,.mark em {
+    margin:0.7rem 0;
+}
+
+
+</style>
+</head>
+<body>
+<div class="shadow-lg bg-white">
+<div class="container sm:px-0 mx-auto py-6 px-4">
+<div class="w-full flex items-center justify-between">
+<a href="/" class="text-red-500 text-xl font-bold flex items-center"><span class="material-symbols-outlined">
+edit_note
+</span> Blog App</a>
+<div class="flex items-center space-x-6">
+<a class="text-gray-600 text-sm hover:text-black" href="/public-notes">Public</a>
+<div class="flex items-center text-gray-600 text-sm">
+<p>
+{{user.name}}
+</p>
+<span class="ml-2 material-symbols-outlined">
+account_circle
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="container mx-auto px-4 py-6">
+<div class="mt-6 mark">
+{{{data.html}}}
+</div>
+</div>
+<script src="/prism.js"></script>
+</body>
+</html>

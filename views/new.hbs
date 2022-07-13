@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+<link rel="shortcut icon" href="./ico.png" type="image/png" />
+<title>create|Blog App</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@200;300;400&display=swap');
+
+* {
+font-family: "Rubik", sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+#autoresizing {
+display: block;
+overflow: hidden;
+}
+.mark *{
+    
+}
+.mark h1,.mark h2,.mark h3,.mark h4,.mark h5{
+    color: #2C3333;
+    padding: 0.6rem 0;
+}
+.mark h1{
+    font-size: 2rem;
+    font-weight:800;
+}
+.mark h2{
+    font-size: 1.7rem;
+    font-weight:700;
+    border-bottom:1px solid rgba(0,0,0,0.3);
+}
+.mark h3{
+    font-size: 24px;
+    font-weight:600;
+}
+.mark h4{
+    font-size:21px;
+    font-weight: 500;
+}
+.mark h5{
+    font-size:18px;
+}
+
+.mark a{
+    color: #1363DF;
+    margin:0;
+    padding: 0;
+    vertical-align: baseline;
+    font-weight: 400;
+}
+.mark p,.mark ul.mark ol{
+    font-size: 16px;
+    line-height: 24px;
+    max-width: 540px;
+    color:rgba(0,0,0,0.5);
+}
+.mark img {
+    width:100%;
+    max-width:600px;
+    height: auto;
+    max-width: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin:1rem 0;
+}
+.mark p{
+    margin:0.5rem 0;
+}
+.mark ul, .mark ol {
+    padding: 0;
+    margin: 0;
+}
+.mark li {
+    padding: 0.5rem 0;
+    line-height: 24px;
+}
+.mark li ul, .mark li ul {
+    margin-left: 24px;
+}
+
+.mark blockquote{
+    width: 100%;
+    height: auto;
+    padding:0.7rem 0.7rem;
+    border-left:4px solid #06283D;
+    background:#DFF6FF;
+    word-wrap: wrap;
+    overflow: auto;
+    margin:1rem;
+}
+
+.mark pre {
+    padding: 0px 24px;
+    max-width: 800px;
+    white-space: pre-wrap;
+}
+.mark code {
+    font-family: Consolas, Monaco, Andale Mono, monospace;
+    line-height: 1.5;
+    font-size: 13px;
+}
+.mark aside {
+    display: block;
+    float: right;
+    width: 390px;
+}
+.mark hr {
+    width: 540px;
+    text-align: left;
+    margin: 0 auto 0 0;
+    color: #999;
+}
+.mark table {
+    border-collapse: collapse;
+    margin: 1em 1em;
+    border: 1px solid #CCC;
+}
+.mark table thead {
+    background-color: #EEE;
+}
+.mark table thead td {
+    color: #666;
+}
+.mark table td {
+    padding: 0.5em 1em;
+    border: 1px solid #CCC;
+}
+.mark strong,.mark em {
+    margin:0.7rem 0;
+}
+</style>
+</head>
+<body>
+<form class="container mx-auto px-4 py-6 sm:px-0" method="POST" action="/new_notes?id={{data._id}}&name={{data.name}}">
+<h1 class="text-center mt-4 text-2xl font-bold">Create A Blog</h1>
+<p class="text-center">
+Please Create A Geniune Blog
+</p>
+<div class="mx-auto mt-12">
+<label for="title" class="block text-xl text-gray-600">Blog Title</label>
+<input name="title" class="block mt-2 py-3 px-4 border-2 outline-none rounded-lg w-full border-red-200 hover:border-red-400" type="text" placeholder="Enter A Blog Title.." id="title" />
+</div>
+<div class="mx-auto mt-4">
+<label for="desc" class="text-gray-500 block text-xl">Description</label>
+<input name="desc" class="block mt-2 py-3 px-4 border-2 outline-none rounded-lg w-full border-red-200 hover:border-red-400" placeholder="Enter A Description.." id="desc" />
+</div>
+<div class="mx-auto mt-4">
+<label for="content" class="text-gray-500 block text-xl">Content</label>
+<textarea id="autoresizing" name="content" class="input h-96 block mt-2 py-3 px-4 border-2 outline-none rounded-lg w-full border-red-200 hover:border-red-400" placeholder="Enter Content in MarkDown" id="content"></textarea>
+</div>
+
+<select class="block mt-4 outline-none py-3 px-4 rounded-lg outline-none" name="status" id="cars">
+<option selected value="Private">Private</option>
+<option value="public">Public</option>
+</select>
+<button class="outline-none  py-3 px-4 text-center rounded-lg bg-red-500 mt-6 text-white" type="submit">Submit</button>
+<button onclick="prev()" class="flex items-center outline-none py-3 px-4 text-center rounded-lg bg-black mt-6 text-white" type="button">Preview
+<span class="material-symbols-outlined">
+play_arrow
+</span>
+</button>
+<div id="result" class="mark w-full overflow-auto h-96 p-4 mt-12 border-2 rounded-lg">
+    
+</div>
+</form>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+  function prev() {
+    document.getElementById('result').innerHTML =
+      marked.parse(document.querySelector(".input").value);
+  }
+  </script>
+<script type="text/javascript">
+
+let textarea = document.querySelector("#autoresizing");
+
+textarea.addEventListener('input', autoResize, false);
+
+
+
+function autoResize() {
+
+this.style.height = 'auto';
+
+this.style.height = this.scrollHeight + 'px';
+
+}
+
+</script>
+</html>

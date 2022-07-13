@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+<link rel="shortcut icon" href="./ico.png" type="image/png" />
+<title>Login|Notes App</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@200;300;400&display=swap');
+
+* {
+font-family: "Rubik", sans-serif;
+}
+</style>
+</head>
+<body>
+<div class=" container mx-auto px-4 flex items-center py-3 justify-end">
+<a href="/auth/register" class="text-red-500 flex items-center">Register <span class="ml-2 material-symbols-outlined">
+arrow_right_alt
+</span></a>
+</div>
+<section class="h-screen">
+<div class="container mx-auto px-4 py-12 h-full">
+<div class="flex flex-col text-center w-full mb-12">
+<h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Login now</h1>
+<p class="lg:w-2/3 mx-auto leading-relaxed text-base">
+We Always Care About Your Data To Be Safe So You Can Trust Us Blindly
+</p>
+</div>
+<div class="flex justify-center  flex-wrap h-full g-6 text-gray-800">
+<div class="w-full sm:max-w-md px-3">
+<form method="POST">
+<!-- Email input -->
+<div class="mb-6">
+<input
+type="email"
+name="email"
+autocomplete="off"
+class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+placeholder="Email address"
+/>
+</div>
+
+<!-- Password input -->
+<div class="mb-6">
+<input
+type="password"
+name="password"
+autofocus="off"
+class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+placeholder="Password"
+/>
+</div>
+
+
+<!-- Submit button -->
+<button
+type="submit"
+class="inline-block px-7 py-3 bg-red-500 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out w-full"
+data-mdb-ripple="true"
+data-mdb-ripple-color="light"
+>
+Submit
+</button>
+
+
+</form>
+</div>
+</div>
+</div>
+</section>
+</body>
+</html>
