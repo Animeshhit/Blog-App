@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const url = process.env.URL || "mongodb+srv://Animesh:7679@cluster0.oxxkg.mongodb.net/?retryWrites=true&w=majority";
+const url = process.env.URL;
 
 const connect = (start) => {
     try {
