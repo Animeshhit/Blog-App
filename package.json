@@ -29,6 +29,7 @@
     "mongoose": "^6.4.4",
     "node-fetch": "^3.2.6",
     "nodemon": "^2.0.19",
-    "slugify": "^1.6.5"
+    "slugify": "^1.6.5",
+    "compression": "^1.7.4"
   }
 }
